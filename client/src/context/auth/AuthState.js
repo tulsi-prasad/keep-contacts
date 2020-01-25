@@ -2,7 +2,6 @@ import React, { useReducer } from "react";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
 import {} from "../types";
-import { sanitize } from "express-validator";
 
 const AuthState = props => {
     const initialState = {
