@@ -4,7 +4,7 @@ import authReducer from "./authReducer";
 import {} from "../types";
 import { sanitize } from "express-validator";
 
-const ContactState = props => {
+const AuthState = props => {
     const initialState = {
         token: localStorage.getItem('token'),
         isAuthenticated: null,
