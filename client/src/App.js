@@ -6,22 +6,25 @@ import Home from "../src/components/pages/Home";
 import About from "../src/components/pages/About";
 
 import ContactState from "../src/context/contact/ContactState";
+import AuthState from "../src/context/auth/AuthState";
 
 function App() {
     return (
-        <ContactState>
-            <Router>
-                <Fragment>
-                    <Navbar />
-                    <div className="container">
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route exact path="/about" component={About} />
-                        </Switch>
-                    </div>
-                </Fragment>
-            </Router>
-        </ContactState>
+        <AuthState>
+            <ContactState>
+                <Router>
+                    <Fragment>
+                        <Navbar />
+                        <div className="container">
+                            <Switch>
+                                <Route exact path="/" component={Home} />
+                                <Route exact path="/about" component={About} />
+                            </Switch>
+                        </div>
+                    </Fragment>
+                </Router>
+            </ContactState>
+        </AuthState>
     );
 }
 
