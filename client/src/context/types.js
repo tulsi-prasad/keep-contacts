@@ -19,3 +19,5 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 
 export const CONTACT_ERROR = "CONTACT_ERROR";
+export const GET_CONTACTS = "GET_CONTACTS";
+export const CLEAR_CONTACTS = "CLEAR_CONTACTS";
