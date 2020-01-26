@@ -69,7 +69,7 @@ const Register = () => {
                     <label htmlFor="password2">Confirm Password</label>
                     <input
                         type="text"
-                        name="password"
+                        name="password2"
                         value={password2}
                         onChange={onChange}
                         required
