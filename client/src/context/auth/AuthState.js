@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import axios from "axios";
 import AuthContext from "./authContext";
 import authReducer from "./authReducer";
-import { REGISTER_SUCCESS, REGISTER_FAIL } from "../types";
+import { REGISTER_SUCCESS, REGISTER_FAIL, CLEAR_ERRORS } from "../types";
 
 const AuthState = props => {
     const initialState = {
@@ -16,6 +16,7 @@ const AuthState = props => {
     const [state, dispatch] = useReducer(authReducer, initialState);
 
     //  Load User
+    const loadUser = () => console.log("loaduser");
 
     //  Register user
     const register = async formData => {
@@ -30,19 +31,21 @@ const AuthState = props => {
 
             dispatch({
                 type: REGISTER_SUCCESS,
-                payload: res.body
+                payload: res.data
             });
         } catch (err) {
             dispatch({
                 type: REGISTER_FAIL,
-                payload: err.response.body.msg
+                payload: err.response.data.msg
             });
         }
     };
 
     // Login user
+    const login = () => console.log("login");
 
     // Logout
+    const logout = () => console.log("logout");
 
     // Clear Errors
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
@@ -56,7 +59,10 @@ const AuthState = props => {
                 user: state.user,
                 error: state.error,
                 register,
-                clearErrors
+                clearErrors,
+                loadUser,
+                login,
+                logout
             }}
         >
             {props.children}
